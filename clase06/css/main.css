@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+/*propiedades del padre
+
+.padre{ 
+    height: 600px;
+    display: grid;
+    /*definimos columnas, como maximo doce columnas, se puede con unidad de medida px con unindad de medida %, pero tambien esta la fr que exclusiva de grid
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-row: auto;
+
+    /*definimos filas
+    grid-template-rows: 100px auto;
+
+    /*esta propiedad nos sirve para colocar un tamaño o espacio entre las column y las row, es el gap
+    /*gap: 10px; o bien individualmente en column y rows
+    column-gap: 10px;
+    row-gap: 30px;
+}
+
+/* propiedades de los hijos 
+
+.hijoUno{
+    background-color: blueviolet;
+}
+.hijoDos{
+    background-color: red;
+
+}
+
+.hijoTres{
+    background-color: green;
+
+}
+
+.hijoCuatro{
+    background-color: pink;
+
+}
+
+/* ejemplo dos 
+
+.ejemplo{
+    height: 700px;
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  
+
+    /*propiedad para alinear horizontalmente es justify items y content
+    justify-items: end;
+
+    /*propiedad para alinear verticalmente es aling items y content 
+    align-items: end;
+
+    column-gap: 10px;
+    row-gap: 30px;
+}
+
+/*propiedades hijo 
+
+.imagen-1{
+    justify-self: start;
+    align-self: center;
+}
+*/
+
+/*propiedades del padre basicamente, recuerden que por convencion y buenas practicas al body no se le aplican propiedades de estructura, para eso creamos una class contenedor y le damos propiedades a eso*/
+
+.contenedor{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, fr);
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+
+    /*bella propiedad*/
+    grid-template-areas: "header header header header"
+                         "aside main main main"
+                         "aside section section2 section3"
+                         "aside footer footer footer";
+
+    gap: 10px;
+
+
+}
+
+
+/* propiedades de las areas */
+
+header{
+    grid-area: header;
+    background-color: #ED6A5A;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-block;
+    background-color: brown;
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+main{
+    grid-area: main;
+    background-color: #9BC1BC ;
+}
+section{
+    grid-area: section;
+    background-color: #5CA4A9;
+}
+.section2{
+    grid-area: section2;
+    background-color:#E6EBE0;
+}
+
+.section3{
+    grid-area: section3;
+    background-color: #c0c4bc;
+}
+
+aside{
+    grid-area: aside;
+    background-color: #A1C8C5;
+}
+
+footer{
+    grid-area: footer;
+    background-color: #F1AE8B;
+}
